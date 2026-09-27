@@ -1,0 +1,357 @@
+<!--
+  ai798 Lab 白皮书 — 全部组件 HTML 片段
+  本文件不是完整页面，是用来"复制片段"的字典。
+  按下面的标签查找对应组件，复制 HTML 到你的 whitepaper.html 里。
+-->
+
+
+<!-- ============================================================
+   1. 封面 (.cover)
+   位置：HTML 第一个元素，紧跟 <body>
+   特征：黑顶 brand band + 大字宋体标题 + 数据带 + 底部 brand+期号
+   字数控制：cover-title ≤ 8 字、cover-lead ≤ 60 字
+============================================================ -->
+<section class="cover">
+  <div class="cover-band">
+    <div class="cover-brand"><img src="../images/ai798lab_logo.png" alt="ai798 Lab"></div>
+    <div class="cover-edition">2026 · First Edition</div>
+  </div>
+
+  <div class="cover-body">
+    <div class="cover-eyebrow">A White Paper · 行业研究报告</div>
+    <h1 class="cover-title">{{标题<br>分行}}</h1>
+    <div class="cover-en">{{English Subtitle Here}}</div>
+
+    <p class="cover-lead">
+      {{一句话引导文案，宋体斜体。}}
+    </p>
+
+    <div class="cover-stats-line">
+      <div><div class="num">22</div><div class="lbl">Cities</div></div>
+      <div><div class="num">80<sup style="font-size:14pt;">+</sup></div><div class="lbl">Communities</div></div>
+      <div><div class="num">11</div><div class="lbl">In Beijing</div></div>
+      <div><div class="num">2027</div><div class="lbl">Tax Window</div></div>
+    </div>
+  </div>
+
+  <div class="cover-foot">
+    <div>
+      <strong>ai798 Lab</strong>
+      <div style="margin-top:4pt; font-family: 'Source Han Serif SC', serif; font-style: italic;">Zero to One Person Company</div>
+    </div>
+    <div style="text-align:right;">2026 · 04</div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+   2. 目录 (.toc)
+   位置：紧接封面后，独立一页
+   规则：编号 (序/01/02/.../附) + 章节名 + desc + 页码
+============================================================ -->
+<div class="bookpage" data-newchapter="true" data-chapter="目录">
+  <div class="runchapter">目录</div>
+  <div class="chapter-num">CONTENTS</div>
+  <h1>目录</h1>
+
+  <ul class="toc">
+    <li>
+      <span class="toc-num">序</span>
+      <div style="flex:1;">
+        <div class="toc-name">序言</div>
+        <div class="toc-desc">为什么是 OPC，为什么是现在</div>
+      </div>
+      <span class="toc-page">003</span>
+    </li>
+    <li>
+      <span class="toc-num">01</span>
+      <div style="flex:1;">
+        <div class="toc-name">概念前置</div>
+        <div class="toc-desc">三种主体对照、收入档位算账、新公司法核心条款</div>
+      </div>
+      <span class="toc-page">004</span>
+    </li>
+    <!-- 复制 li 增加章节 -->
+  </ul>
+</div>
+
+
+<!-- ============================================================
+   3. 章节扉页（每个新章节起始页）
+   规则：data-newchapter="true" 触发 break-before: page
+        chapter-num: PART ONE / TWO / THREE / FOUR / ...
+        chapter-title: 32pt 宋体大字
+        chapter-lead: 宋体斜体引语
+============================================================ -->
+<div class="bookpage" data-newchapter="true" data-chapter="第 01 部分 · 概念前置">
+  <div class="runchapter">第 01 部分 · 概念前置</div>
+  <div class="chapter-num">PART ONE</div>
+  <h1 class="chapter-title">概念前置</h1>
+  <div class="chapter-lead">
+    什么是 OPC，它和个体户、个人独资企业有什么区别，2024 新公司法改了什么。
+  </div>
+
+  <h2>1.1 二级标题</h2>
+  <p>正文……</p>
+</div>
+
+
+<!-- ============================================================
+   4. 表格（极简 FT 风格）
+   规则：自动应用 thead 上 2px 黑顶线 + 1px 黑底线，最后行加粗黑底线
+        thead 跨页时自动重复（display: table-header-group）
+        tr 整行 break-inside: avoid（不会被切两半）
+============================================================ -->
+<table>
+  <thead>
+    <tr><th>列 1</th><th>列 2</th><th>列 3</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>A</td><td>B</td><td>C</td></tr>
+    <tr><td>D</td><td>E</td><td>F</td></tr>
+  </tbody>
+</table>
+
+<!-- 紧凑版表格（行高更小，字号 9pt）— 适合速查表 -->
+<table class="compact">
+  <thead><tr><th>列 1</th><th>列 2</th></tr></thead>
+  <tbody><tr><td>A</td><td>B</td></tr></tbody>
+</table>
+
+
+<!-- ============================================================
+   5. ai798 Lab 解析块 — 白皮书的"灵魂组件"
+   规则：左竖黑线 + 暖灰底 + 黑底白字 mono tag + 宋体 body
+   作用：插入 ai798 Lab 自己的判断 / 复盘 / 独立观点
+   位置：每章至少 1 个，建议 2~3 个
+============================================================ -->
+<div class="ai798-analysis">
+  <div class="ai798-analysis-tag">ai798 Lab 解析</div>
+  <div class="ai798-analysis-body">
+    {{独立观点。基于 ai798 Lab 实践数据 / 复盘案例，给出超越官方信源的判断。
+    可以加副标，例如：}}
+  </div>
+</div>
+
+<!-- 带副标的版本 -->
+<div class="ai798-analysis">
+  <div class="ai798-analysis-tag">ai798 Lab 解析 · 合规底线的判例视角</div>
+  <div class="ai798-analysis-body">
+    {{正文。}}
+  </div>
+</div>
+
+
+<!-- ============================================================
+   6. 政策速览卡 / 总览卡 (.policy-glance)
+   规则：黑边框 + 暖白底 + head 标题+大写英文 tag + 内含 grid 或 table
+   用途：章节开头放一张速览卡，先把全章核心数据/政策亮出来
+============================================================ -->
+<div class="policy-glance">
+  <div class="policy-glance-head">
+    <div class="policy-glance-title">全国五大税收洼地速览</div>
+    <div class="policy-glance-tag">TAX HAVENS · 5 KEY ZONES</div>
+  </div>
+  <table class="compact" style="margin: 4pt 0 0;">
+    <thead>
+      <tr><th>洼地</th><th>核心优惠</th><th>适用条件</th><th>执行期限</th><th>定位</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>海南</strong></td><td>15% 企所税 + 15% 个税</td><td>主营 ≥ 60%</td><td>2027/12/31</td><td>长期窗口</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- 速览卡里改用 grid（适合 4 个 KPI 数字而非表格） -->
+<div class="policy-glance">
+  <div class="policy-glance-head">
+    <div class="policy-glance-title">本章核心数据</div>
+    <div class="policy-glance-tag">KEY METRICS</div>
+  </div>
+  <div class="grid-4">
+    <div class="policy-item">
+      <div class="policy-item-tag">CITIES</div>
+      <div class="policy-item-num">22</div>
+      <div class="policy-item-desc">覆盖一线 + 新一线 + 中西部</div>
+    </div>
+    <div class="policy-item">
+      <div class="policy-item-tag">COMMUNITIES</div>
+      <div class="policy-item-num">80+</div>
+      <div class="policy-item-desc">官方 OPC 创业园区</div>
+    </div>
+    <div class="policy-item">
+      <div class="policy-item-tag">SUBSIDY</div>
+      <div class="policy-item-num">¥10M</div>
+      <div class="policy-item-desc">最高单项补贴金额</div>
+    </div>
+    <div class="policy-item">
+      <div class="policy-item-tag">DEADLINE</div>
+      <div class="policy-item-num">2027</div>
+      <div class="policy-item-desc">主要税收政策窗口期</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ============================================================
+   7. note 注释 / 风险提示
+   规则：上下双线 + 灰色调 + note-label 大写 letter-spacing
+   用途：政策风险提示、编辑说明、口径校准、待续期文件提示
+============================================================ -->
+<div class="note">
+  <span class="note-label">⚠ 风险提示</span>
+  截至 2026-04-26，南沙 15% 企所税原文件距执行截止日仅剩约 8 个月，续期文件尚未公布。计划注册南沙的 OPC，应至少准备两种方案……
+</div>
+
+<div class="note">
+  <span class="note-label">EDITOR'S NOTE</span>
+  本白皮书所引文号 财税〔2026〕3 号 来自 2026 年 2 月公开报道，正式发文版本以财政部、国家税务总局官方文件为准。
+</div>
+
+
+<!-- ============================================================
+   8. figure 图表块
+   规则：FIGURE 标号（mono 大写）+ caption（宋体）+ img + source（mono 小字）
+   建议：图片宽度 100%，PNG 1080×1440 或更高分辨率
+============================================================ -->
+<div class="figure">
+  <div class="figure-label">FIGURE 02</div>
+  <div class="figure-caption">税收洼地综合税负排行（横向条形对比）</div>
+  <img src="../images/02_税收洼地排行.png" class="figure-img">
+  <div class="figure-source">来源：国家税务总局 · 财政部公告 · 项目政策汇总归档</div>
+</div>
+
+<!-- 高度受限版本（避免单图占满整页） -->
+<div class="figure">
+  <div class="figure-label">FIGURE 04</div>
+  <div class="figure-caption">2026 年 4 月 OPC 政策时间线</div>
+  <img src="../images/04_政策时间线.png" class="figure-img constrained">
+  <div class="figure-source">来源：首都之窗 · 各地政府门户 · 新华网</div>
+</div>
+
+
+<!-- ============================================================
+   9. city-header + community（主体分组）
+   规则：city-header 是底部带黑线的城市/部门/产品线标题
+        community 是该城市下的子项卡片（社区/项目/产品）
+   用途：按地区/部门/产品线把同类内容打包成卡片
+============================================================ -->
+<div class="city-header">
+  <span class="city-name">北京</span>
+  <span class="city-tag">BEIJING · 11 个 OPC 社区</span>
+</div>
+
+<div class="community">
+  <div class="community-name">中关村 AI 北纬社区</div>
+  <div class="community-meta">海淀 · 大兴庄科技园区 · 启动 2025 年 12 月</div>
+  <div class="community-desc">首期 6.7 万㎡ 产业空间（OPC 专属面积 6000㎡）……</div>
+</div>
+
+<div class="community">
+  <div class="community-name">上地 OPC 友好创新街区</div>
+  <div class="community-meta">海淀上地街道 · 启动 2026 年 3 月 1 日 · 全市 No.1</div>
+  <div class="community-desc">不是单一园区而是街区级别——以上地 + 10 家直接合作伙伴……</div>
+</div>
+
+
+<!-- ============================================================
+   10. label 标签（迷你状态标签）
+   规则：宽 70pt，居中，可选 ink/accent 变体
+   用途：表格里加状态标记（公示中、已发布、待续期、长期有效）
+============================================================ -->
+<span class="label">公示中</span>
+<span class="label label-ink">长期有效</span>
+<span class="label label-accent">已正式延期</span>
+
+
+<!-- ============================================================
+   11. data-card（数据卡片）
+   规则：细边框，简单内容卡
+============================================================ -->
+<div class="grid-2">
+  <div class="data-card">
+    <h4>免租期</h4>
+    <p>新设 2 年免租 + 第 3 年半价</p>
+  </div>
+  <div class="data-card">
+    <h4>商业化奖励</h4>
+    <p>10 万元 · 提交 ARR 数据后申领</p>
+  </div>
+</div>
+
+
+<!-- ============================================================
+   12. blockquote 引语（宋体斜体）
+   用途：开篇金句、章节末段升华
+============================================================ -->
+<blockquote>
+  AI 让一个人可以干一个团队的活，但大多数人不知道从哪开始。
+</blockquote>
+
+
+<!-- ============================================================
+   13. lead 引语段（章节开头宋体斜体大字）
+============================================================ -->
+<p class="lead">
+  "AI 让一个人可以干一个团队的活，但大多数人不知道从哪开始。"
+</p>
+
+
+<!-- ============================================================
+   14. hr 分隔线（普通 / thick）
+============================================================ -->
+<hr>
+<hr class="thick">
+
+
+<!-- ============================================================
+   15. contact-card 联系卡（用于联系页）
+   规则：双栏 contact-grid，每张卡里 标题 + 副标 + 二维码 + 引导
+============================================================ -->
+<div class="contact-grid">
+  <div class="contact-card">
+    <div class="contact-card-title">ai798 Lab 公众号</div>
+    <div class="contact-card-sub">每周深度内容 · 政策追踪 · AI 工具实操</div>
+    <img src="../images/qr_official.png" alt="ai798 Lab 公众号">
+    <div class="contact-card-instruction">关注后获取白皮书电子版与季度更新</div>
+  </div>
+
+  <div class="contact-card">
+    <div class="contact-card-title">添加小助手</div>
+    <div class="contact-card-sub">入群交流 · 答疑 · ZOPC 社群通道</div>
+    <img src="../images/qr_assistant.png" alt="ai798 Lab 小助手微信">
+    <div class="contact-card-instruction">实时答疑与 ZOPC 社群入群通道</div>
+  </div>
+</div>
+
+
+<!-- ============================================================
+   16. h1-sub（h1 紧跟的副标）
+============================================================ -->
+<h1>序言</h1>
+<div class="h1-sub">为什么是 OPC，为什么是现在</div>
+
+
+<!-- ============================================================
+   17. bignum（章节内的大数字标号）
+============================================================ -->
+<div class="bignum">2027</div>
+
+
+<!-- ============================================================
+   18. 双栏编辑说明（序言末尾常用）
+============================================================ -->
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24pt; margin-top: 20pt;">
+  <div>
+    <div class="chapter-num" style="font-size: 9pt; margin-bottom: 6pt;">编辑说明</div>
+    <p style="font-size: 9.5pt; line-height: 1.65; color: var(--text-soft);">
+      本白皮书数据切片至 2026 年 4 月 26 日……
+    </p>
+  </div>
+  <div>
+    <div class="chapter-num" style="font-size: 9pt; margin-bottom: 6pt;">关于 ai798 Lab</div>
+    <p style="font-size: 9.5pt; line-height: 1.65; color: var(--text-soft);">
+      ai798 Lab 是一群正在用 AI 做一人企业的人……
+    </p>
+  </div>
+</div>
